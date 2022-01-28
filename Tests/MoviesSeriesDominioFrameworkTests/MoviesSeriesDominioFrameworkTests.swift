@@ -34,4 +34,17 @@ final class MoviesSeriesDominioFrameworkTests: XCTestCase {
         XCTAssertEqual(urlTv,"https://api.themoviedb.org/3/account/11824124/favorite/tv?api_key=05e3d00ae13d42a1dda51e75a27fcc49&session_id=83625650250c588344e1ae277a5eafb653010b94&language=en-US&sort_by=created_at.asc&page=1")
         
     }
+    
+    func testMovie () {
+        let peli = Movie(id: 1, titulo: "Club de la Pelea", sinopsis: "Descripcion", lanz: "2000")
+        XCTAssertNotNil(peli)
+        XCTAssertEqual(peli.titulo, "Club de la Pelea")
+    }
+    
+    func testTvSerie () {
+        let serie = TvSerie(id: 1, titulo: "Dexter", sinopsis: "Asesino Serial", lanz: "2002", votos: 7.5)
+        XCTAssertNotNil(serie)
+        XCTAssertEqual(serie.titulo, "Dexter")
+        
+    }
 }
