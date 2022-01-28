@@ -6,6 +6,7 @@ public class MoviesSeriesDominioFramework {
     private var usuarioId: String?
     
     private let urlBase = "https://api.themoviedb.org/3/"
+    private let urlBaseImage = "https://image.tmdb.org/t/p/original"
     
     private let urlMovie = "movie"
     private let urlSeries = "tv"
@@ -55,6 +56,10 @@ public class MoviesSeriesDominioFramework {
             return ""
         }
         return self.urlBase + self.urlAccount + self.usuarioId! + self.urlFavorite + self.tipoAURL(tipo: tipo) + "?" + self.urlApiKey + self.llaveApi + self.urlEndSession + self.sessionId! + self.urlEndLang + self.urlEndSort + self.urlEndPage
+    }
+    
+    public func obtenerURLImage (image: String) -> String {
+        return self.urlBaseImage + image
     }
     
     private func tipoAURL(tipo: Contenido) -> String {

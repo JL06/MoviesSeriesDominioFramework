@@ -47,4 +47,11 @@ final class MoviesSeriesDominioFrameworkTests: XCTestCase {
         XCTAssertEqual(serie.titulo, "Dexter")
         
     }
+    
+    func testImage () {
+        let obj = MoviesSeriesDominioFramework(apiKey: "05e3d00ae13d42a1dda51e75a27fcc49")
+        let urlImg = obj.obtenerURLImage(image: "/cVn8E3Fxbi8HzYYtaSfsblYC4gl.jpg")
+        
+        XCTAssertEqual(urlImg, "https://image.tmdb.org/t/p/original/cVn8E3Fxbi8HzYYtaSfsblYC4gl.jpg")
+    }
 }
